@@ -1,0 +1,23 @@
+start zookeeper
+C:\Users\vikas\softwares\kafka\bin\windows>zookeeper-server-start.bat C:\Users\vikas\softwares\kafka\config\zookeeper.properties
+
+start kafka
+C:\Users\vikas\softwares\kafka\bin\windows>kafka-server-start.bat C:\Users\vikas\softwares\kafka\config\server.properties
+
+Create Topic
+depricated way
+C:\Users\vikas\softwares\kafka\bin\windows>kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic kafkatopic1
+
+new way
+C:\Users\vikas\softwares\kafka\bin\windows>kafka-topics.bat --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic kafkatopic1
+
+Test
+
+produce
+C:\software\kafka_2.13-3.2.1\bin\windows>kafka-console-producer.bat --broker-list localhost:9092 --topic kafkatopic1
+
+
+Consume
+C:\software\kafka_2.13-3.2.1\bin\windows>kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic kafkatopic1
+
+
